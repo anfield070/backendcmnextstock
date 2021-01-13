@@ -1,8 +1,13 @@
 import jwt from 'jsonwebtoken';
 import mysql from '../mysql';
-
+import moment from 'moment';
 const fs = require('fs-extra');
 const path = require('path');
+
+export const datenow = () => {
+	let datatime = moment().format('yyyy-MM-DD HH:mm:ss');
+	return datatime;
+};
 
 // Upload Image
 const uploadImage = async (files, doc) => {
